@@ -120,7 +120,3 @@ Manutenibilidade                →  Nomenclatura clara, documentação e estrut
 | Processamento de Imagem | Pillow |
 
 ---
-
-## Licença
-
-Este projeto foi desenvolvido para fins educacionais e de demonstração.
