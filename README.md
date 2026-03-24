@@ -1,93 +1,126 @@
-# 8-Bitify - Pixel Art Converter
+# 8-Bitify
 
-A desktop application for converting images to pixel art using PyQt6.
+<p align="center">
+  <strong>Conversor de imagens para pixel art desenvolvido com PyQt6</strong>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/PyQt6-6.0+-41CD52?logo=qt&logoColor=white" alt="PyQt6" />
+  <img src="https://img.shields.io/badge/Pillow-10.0+-FF6B6B" alt="Pillow" />
+  <img src="https://img.shields.io/badge/Licença-Educacional-blue" alt="License" />
+</p>
 
-- Drag-and-drop image loading
-- Multiple preset configurations (Game Boy, NES, Retro VGA, etc.)
-- Customizable pixelation parameters
-- Real-time preview
-- Background processing with progress indication
-- Save converted images
+---
 
-## Project Structure
+## Descrição
+
+8-Bitify é uma aplicação desktop para conversão de imagens em pixel art, com suporte a múltiplos presets de consoles clássicos, parâmetros personalizáveis e processamento em segundo plano para manter a interface sempre responsiva.
+
+---
+
+## Funcionalidades
+
+- Carregamento de imagens por arrastar e soltar
+- Múltiplos presets pré-configurados (Game Boy, NES, VGA Retrô, etc.)
+- Parâmetros de pixelização totalmente personalizáveis
+- Pré-visualização em tempo real
+- Processamento em segundo plano com indicação de progresso
+- Exportação das imagens convertidas
+
+---
+
+## Estrutura do Projeto
 
 ```
 8_bitify/
-├── main.py                 # Application entry point
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
+├── main.py                 # Ponto de entrada da aplicação
+├── requirements.txt        # Dependências Python
+├── README.md               # Este arquivo
 ├── config/
-│   └── constants.py       # Presets, theme constants, and styles
+│   └── constants.py        # Presets, constantes de tema e estilos
 ├── core/
-│   ├── image_processor.py # Image processing functions
-│   └── worker.py          # Background worker thread
+│   ├── image_processor.py  # Funções de processamento de imagem
+│   └── worker.py           # Thread de processamento em segundo plano
 └── ui/
-    ├── components.py      # Reusable UI components
-    └── main_window.py     # Main application window
+    ├── components.py       # Componentes de UI reutilizáveis
+    └── main_window.py      # Janela principal da aplicação
 ```
 
-## Installation
+---
 
-1. Clone the repository
-2. Install dependencies:
+## Instalação
+
+1. Clone o repositório
+2. Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-Run the application:
+## Uso
+
+Execute a aplicação:
 
 ```bash
 python main.py
 ```
 
-### How to Use
+### Como Usar
 
-1. **Load an image**: Drag and drop an image file onto the drop zone, or click to browse
-2. **Select a preset**: Choose from predefined configurations (Game Boy, NES, etc.)
-3. **Adjust parameters**: Fine-tune pixel size, colors, detail level, and other settings
-4. **Convert**: Click the "CONVERT" button to process the image
-5. **Save**: Save the converted pixel art to a file
+1. **Carregar uma imagem**: Arraste e solte um arquivo de imagem na área indicada, ou clique para navegar pelos arquivos
+2. **Selecionar um preset**: Escolha entre as configurações predefinidas (Game Boy, NES, etc.)
+3. **Ajustar parâmetros**: Refine o tamanho do pixel, número de cores, nível de detalhe e outras configurações
+4. **Converter**: Clique no botão **"CONVERTER"** para processar a imagem
+5. **Salvar**: Exporte o pixel art convertido para um arquivo
 
-### Presets
+### Presets Disponíveis
 
-- **Main Character**: Optimized for character sprites
-- **Enemy**: Suitable for enemy/NPC sprites
-- **Item / Object**: For small objects and items
-- **Background**: For background/scenery images
-- **Game Boy**: Classic 4-color green palette
-- **NES**: 16-color NES-style palette
-- **Retro VGA**: 256-color VGA palette
-- **Ultra Detail**: High-detail preservation
-- **Big Pixel**: Large, chunky pixels
+| Preset | Descrição |
+|---|---|
+| **Personagem Principal** | Otimizado para sprites de personagens |
+| **Inimigo** | Adequado para sprites de inimigos e NPCs |
+| **Item / Objeto** | Para objetos e itens pequenos |
+| **Cenário** | Para imagens de fundo e cenários |
+| **Game Boy** | Paleta clássica de 4 cores em tons de verde |
+| **NES** | Paleta estilo NES com 16 cores |
+| **VGA Retrô** | Paleta VGA com 256 cores |
+| **Ultra Detalhe** | Preservação máxima de detalhes |
+| **Pixel Grande** | Pixels grandes e marcantes |
 
-## Development
+---
 
-### Code Organization
+## Arquitetura
 
-The application follows clean code principles:
+O projeto segue princípios de código limpo, com separação clara entre camadas:
 
-- **Separation of Concerns**: UI, business logic, and image processing are separated
-- **Single Responsibility**: Each module has a clear, focused purpose
-- **Reusability**: UI components are modular and reusable
-- **Maintainability**: Clear naming, documentation, and consistent structure
+```
+Separação de Responsabilidades  →  UI, lógica de negócio e processamento isolados
+Responsabilidade Única          →  Cada módulo tem um propósito claro e focado
+Reusabilidade                   →  Componentes de UI modulares e reutilizáveis
+Manutenibilidade                →  Nomenclatura clara, documentação e estrutura consistente
+```
 
-### Key Design Decisions
+### Decisões de Design
 
-1. **Background Processing**: Image processing runs in a worker thread to keep the UI responsive
-2. **Preset System**: Predefined configurations for common use cases
-3. **Customizable UI**: Theme constants allow easy styling changes
-4. **Error Handling**: Graceful error handling with user feedback
+1. **Processamento em Segundo Plano**: O processamento de imagens roda em uma thread separada para manter a UI responsiva
+2. **Sistema de Presets**: Configurações predefinidas para os casos de uso mais comuns
+3. **UI Customizável**: Constantes de tema permitem alterações de estilo com facilidade
+4. **Tratamento de Erros**: Erros tratados de forma elegante com feedback visual ao usuário
 
-## Dependencies
+---
 
-- **PyQt6**: GUI framework
-- **Pillow**: Image processing library
+## Tecnologias
 
-## License
+| Categoria | Tecnologia |
+|---|---|
+| Interface Gráfica | PyQt6 |
+| Processamento de Imagem | Pillow |
 
-This project is for educational/demonstration purposes.
+---
+
+## Licença
+
+Este projeto foi desenvolvido para fins educacionais e de demonstração.
